@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>websiteInit() | Home</title>
+    <meta name="description" content="Porfolio and work website!">
+    <meta name ="author" content="Dilshan Gunasekera">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Harmattan" rel="stylesheet">
+
+  <script src="util.js" type="text/javascript"></script>
+
+    <script src="snake_demo/snake_board.js" type="text/javascript"></script>
+    <script src="snake_demo/snake.js" type="text/javascript"></script>
+    <script src="snake_demo/snake_input.js" type="text/javascript"></script>
+
+    <script src="pong_demo/pong_board.js" type="text/javascript"></script>
+    <script src="pong_demo/pong.js" type="text/javascript"></script>
+    <script src="pong_demo/pong_input.js" type="text/javascript"></script>
+
+    <script src="pacman_demo/pacman_board.js" type="text/javascript"></script>
+
+    <style type="text/css">
+      html, body {
+        margin: 0px;
+        top: 0px;
+        background-color: #FFFFFF;
+        overflow-x: hidden;
+        width: 100%;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top" style="border-radius: 0; width:100%">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">My Website</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="selected"><a href="index.html">Home</a></li>
+        <li class="nav-glow-effects"><a href="demos.html">Demos</a></li>
+        <li class="nav-glow-effects"><a href="projects.html">Projects</a></li>
+        <li class="nav-glow-effects"><a href="Articles.html">Articles</a></li>
+        <li class="nav-glow-effects"><a href="Github.html">Github</a></li>
+        <li class="nav-glow-effects"><a href="Resume.html">Resume</a></li>
+        <li class="nav-glow-effects"><a href="Contact.html">Contact</a></li>
+        
+      </ul>
+    
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+  <!-- Header -->
+<div class="container" style="padding: 0px;width:100%">
+  <div class="jumbotron text-center" id="webpage-title" style="margin-top: 20px;padding-bottom: 10px">
+      <font style="color: white"><h1><strong>Website Demos</strong> <br>
+      <small style="color: #EEEEEE;" size="1">Experience some HTML5 Javascript games I've made</small>
+      </h1></font>
+      <div style="text-align: right">
+        <font size="4vh" style="color: white">Dilshan Gunasekera</font>
+      </div>
+    </div>
+  </div>
+
+<div style="background-color: #EEEEEE;">
+<br>
+<br>
+  <div class="container section-block">
+    <br>
+    <br>
+    <font class="section-heading">Snake</font>
+    <hr class="subtle_section">
+    <br>
+    <br>
+    <p>
+      An implementation of the classic Snake arcade game. It's worth noting that there is not really a good way to control the snake on your phone, so I recommend the use of a keyboard HUD.
+    </p>
+    <canvas id="Snake" style="display:none"></canvas>
+    <canvas id="score" style="display:none"></canvas>
+    <br>
+    <div class="btn-group" role="group">
+      <button class="btn btn-default btn-group-lg" onClick=add_fps(15)><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></button>
+      <button class="btn btn-default btn-group-sm" onClick=set_fps(15)>Difficulty</button>
+      <button class="btn btn-default btn-group-xs" onClick=sub_fps()><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></button>
+    </div>
+    <br>
+    <div class="btn-group" role="group">
+      <button class="btn btn-default btn-group-lg" onClick=snake_board_init()>Play</button>
+      <button class="btn btn-default btn-group-xs" onClick=snake_kill_game()>Quit</button>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div style="height: 30px"></div>
+
+  <div class="container section-block">
+    <br>
+    <br>
+    <font class="section-heading">Pong</font>
+    <hr class="subtle_section">
+    <br>
+    <br>
+    <p>
+      A more realistic Pong game. The Physics are a little closer to what one may expect in a realistic version of 2D pong. Utilizing vectors and paddle acceleration for ball pathing, this implementation may cause a little bit of troubles learning, but ball curving and control is more prominent. However, the X component of the ball's vector is a set amount to keep the gameplay and difficulty in check.
+    </p>
+    <center>
+    <canvas id="Pong" style="display:none"></canvas>
+    </center>
+    <br>
+    <div class="btn-group" role="group">
+      <button class="btn btn-default btn-group-lg" onClick=pong_board_init()>Play</button>
+      <button class="btn btn-default btn-group-xs" onClick=pong_board_kill()>Quit</button>
+    </div>
+    <br>
+    <br>
+  </div>
+
+  <div style="height: 30px"></div>
+
+  <div class="container section-block">
+    <br>
+    <br>
+    <font class="section-heading">Stormy Rain</font>
+    <hr class="subtle_section">
+    <br>
+    <br>
+    <p>
+      Just a cool visual effect of some rain drops drawn and animated in Javascript. I would take this example further by adding clouds, a splash animation and some thunder/lightning, but I'm not sure how worthwhile that'd be. Fair warning, this is a <strong>fullscreen</strong> animation, and not embedded on the page like the rest of the demos. Opening the watch link in a new tab would be ideal if you wish to save your progress in the other games.
+    </p>
+    <br>
+    <div class="btn-group" role="group">
+      <button class="btn btn-default btn-group-lg" onClick="location.href='rain_demo/rain.html';">Watch</button>
+    </div>
+    <br>
+    <br>
+  </div>
+  <div style="height: 30px"></div>
+
+  <div class="container section-block">
+    <br>
+    <br>
+    <font class="section-heading">Pac Man</font>
+    <hr class="subtle_section">
+    <br>
+    <br>
+    <p>
+      Pac Man is a classic arcade game that I couldn't possibly skip on implementing. The idea is to avoid the ghosts and eat all of the dots on the screen, but you already know that much!
+    </p>
+    <center>
+      <canvas id="Pacman" style="display:none"></canvas>
+    </center>
+    <br>
+    <div class="btn-group" role="group">
+      <button class="btn btn-default btn-group-lg" onClick=pacman_board_init()>Play</button>
+      <button class="btn btn-default btn-group-xs" onClick=pong_board_kill()>Quit</button>
+    </div>
+    <br>
+    <br>
+  </div>
+  <div style="height: 30px"></div>
+  </body>
+
+  <footer>
+    <div id="CR_text">
+    <br>
+    <br>
+    <br>
+    This site and it's contents are copyright &copy; 2017 Dilshan Gunasekera. Maintained and written purely by Dilshan, unless otherwise mentioned.
+    <br>
+    <br>
+    <br>
+    </div>
+  </footer>
+
+</html>
