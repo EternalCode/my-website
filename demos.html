@@ -25,8 +25,6 @@
     <script src="pong_demo/pong.js" type="text/javascript"></script>
     <script src="pong_demo/pong_input.js" type="text/javascript"></script>
 
-    <script src="pacman_demo/pacman_board.js" type="text/javascript"></script>
-
     <style type="text/css">
       html, body {
         margin: 0px;
@@ -163,20 +161,16 @@
   <div class="container section-block">
     <br>
     <br>
-    <font class="section-heading">Pac Man</font>
+    <font class="section-heading">Circle Game</font>
     <hr class="subtle_section">
     <br>
     <br>
     <p>
-      Pac Man is a classic arcade game that I couldn't possibly skip on implementing. The idea is to avoid the ghosts and eat all of the dots on the screen, but you already know that much!
+      There was this quite addicting circle "eating" game I found at http://circle-game.sysach.com. This is sort of my implementation of that game, with a few tweaks for difficulty levels. Again, fair warning, this is a <strong>fullscreen</strong> game and not embedded to the page. 
     </p>
-    <center>
-      <canvas id="Pacman" style="display:none"></canvas>
-    </center>
     <br>
     <div class="btn-group" role="group">
-      <button class="btn btn-default btn-group-lg" onClick=pacman_board_init()>Play</button>
-      <button class="btn btn-default btn-group-xs" onClick=pong_board_kill()>Quit</button>
+      <button class="btn btn-default btn-group-lg" onClick="location.href='circle_demo/circle_game.html';">Play</button>
     </div>
     <br>
     <br>
